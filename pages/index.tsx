@@ -20,7 +20,7 @@ interface HomeProps {
 }
 
 export default function Home({ energyWeather }: HomeProps) {
-  const { image } = energyWeather
+  const { text, image } = energyWeather
   const { url, alt_text, width, height } = image
   return (
     <>
@@ -35,6 +35,17 @@ export default function Home({ energyWeather }: HomeProps) {
           width={width}
           height={height}
         />
+        <p>{text}</p>
+        
+        <h2>Mikä energiasää?</h2>
+
+        <p>Ilmatieteen laitos julkaisee joka maanantai ja torstai <a href="https://twitter.com/meteorologit">Twitter-tilillään</a> katsauksen tulevien päivien säähän energiankäytön ja -tuotannon näkökulmasta.</p>
+
+        <p>Hyvä energiasää vallitsee leudossa ja tuulisessa tilanteessa, huono kovalla pakkasella ja tyynellä säällä.</p>
+
+        <p>Tämä sivu hakee automaattisesti uusimman energiasääennusteen Ilmatieteen laitoksen Twitter-tililtä.</p>
+
+        <p><a href="https://www.ilmatieteenlaitos.fi/saa-ja-energia-kysymyksia-ja-vastauksia">Lue lisää energiasäästä</a></p>
       </main>
     </>
   )
