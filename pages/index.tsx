@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 
 interface EnergyWeather {
   id: string;
@@ -19,7 +20,8 @@ interface HomeProps {
 }
 
 export default function Home({ energyWeather }: HomeProps) {
-  console.log(energyWeather)
+  const { image } = energyWeather
+  const { url, alt_text, width, height } = image
   return (
     <>
       <Head>
@@ -27,6 +29,12 @@ export default function Home({ energyWeather }: HomeProps) {
       </Head>
       <main>
         <h1>Energiasää</h1>
+        <Image
+          src={url}
+          alt={alt_text}
+          width={width}
+          height={height}
+        />
       </main>
     </>
   )
